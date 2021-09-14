@@ -1,6 +1,6 @@
 %------------- DESCRIPTION -------------
 
-%To reproduce the numerical experiments from Section 3.3, first uncomment
+%To reproduce the numerical experiments from Section 3.4, first uncomment
 %the corresponding block of code under "MATRIX CHOICE". Then run the
 %script. The script will store the results in a file "test". To see the
 %plots run script "plotter_Nystrom++.m". 
