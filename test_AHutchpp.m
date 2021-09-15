@@ -13,7 +13,7 @@ addpath('results')
 
 rng(0)
 
-for matrix = 1:11
+for matrix = 1:12
 
     %------------- MATRIX CHOICE -------------
     
@@ -48,6 +48,19 @@ for matrix = 1:11
         % Synthetic matrix with algebraically decaying eigenvalues/singular values.
         % (Figure 3c)
         n = 5000;
+        c = 1;
+        D = (1:n).^(-c);
+        [Q,~] = qr(randn(n));
+        A = Q*diag(D)*Q';
+        tr = trace(A);
+        Afun = @(X) A*X;
+        filename = 'results/algebraic_c=1';
+        
+    elseif (matrix == 4)
+
+        % Synthetic matrix with algebraically decaying eigenvalues/singular values.
+        % (Figure 3c)
+        n = 5000;
         c = 2;
         D = (1:n).^(-c);
         [Q,~] = qr(randn(n));
@@ -56,20 +69,20 @@ for matrix = 1:11
         Afun = @(X) A*X;
         filename = 'results/algebraic_c=2';
         
-    elseif (matrix == 4)
+    elseif (matrix == 5)
 
         %Synthetic matrix with algebraically decaying eigenvalues/singular values.
         %(Figure 3d)
         n = 5000;
-        c = 5;
+        c = 3;
         D = (1:n).^(-c);
         [Q,~] = qr(randn(n));
         A = Q*diag(D)*Q';
         tr = trace(A);
         Afun = @(X) A*X;
-        filename = 'results/algebraic_c=5';
+        filename = 'results/algebraic_c=3';
         
-    elseif (matrix == 5)
+    elseif (matrix == 6)
 
         %Triangle counting with Wikipedia vote network (Figure 4a)
         A = readWikiNet(1);
@@ -78,7 +91,7 @@ for matrix = 1:11
         Afun = @(X) A*(A*(A*X));
         filename = 'results/cube_wiki';
         
-    elseif (matrix == 6)
+    elseif (matrix == 7)
 
         %Triangle counting with arXiv GR-QC network (Figure 4b)
         A = load('other/ca-GrQc.mat'); A = A.Problem; A = A.A;
@@ -87,7 +100,7 @@ for matrix = 1:11
         Afun = @(X) A*(A*(A*X));
         filename = 'results/cube_arxiv';
         
-    elseif (matrix == 7)
+    elseif (matrix == 8)
 
         %Estrada index (Figure 5)
         B = sparse(create_roget_mat()); 
@@ -99,7 +112,7 @@ for matrix = 1:11
         Afun = @(X) matmat(n,Bfun,X,f,n_it);
         filename = 'results/estrada';
         
-    elseif (matrix == 8)
+    elseif (matrix == 9)
 
         %Log-determinant of matrix with eigenvalue gap (Figure 6a)
         n = 5000;
@@ -114,7 +127,7 @@ for matrix = 1:11
         tr = trace(logm(eye(300) + full(D * (X' * X))));
         filename = 'results/saibaba_ipsen';
         
-    elseif (matrix == 9)
+    elseif (matrix == 10)
 
         %Log-determinant of matrix Thermomech_TC (Figure 6b)
         A = load('thermomech_TC.mat'); A = A.Problem; A = A.A;
@@ -126,7 +139,7 @@ for matrix = 1:11
         tr = -546786.561681857;
         filename = 'results/thermomec';
         
-    elseif (matrix == 10)
+    elseif (matrix == 11)
 
         %Inverse of tridiag(-1,4,-1) (Figure 7a)
         A = sparse(4*eye(10000) - diag(ones(9999,1),1) - diag(ones(9999,1),-1));
@@ -135,7 +148,7 @@ for matrix = 1:11
         Afun = @(X) A\X;
         filename = 'results/tridiaginv';
         
-    elseif (matrix == 11)
+    elseif (matrix == 12)
 
         %Inverse of discretization of Poisson's equation (Figure 7b)
         A = gallery('poisson',100);

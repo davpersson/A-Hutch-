@@ -14,7 +14,7 @@ addpath('results')
 filename = 'results/test';
 rng(0)
 
-for matrix = 1:9
+for matrix = 1:10
 
     %------------- MATRIX CHOICE -------------
     
@@ -49,6 +49,19 @@ for matrix = 1:9
         % Synthetic matrix with algebraically decaying eigenvalues/singular values.
         % (Figure 8c)
         n = 5000;
+        c = 1;
+        D = (1:n).^(-c);
+        [Q,~] = qr(randn(n));
+        A = Q*diag(D)*Q';
+        tr = trace(A);
+        Afun = @(X) A*X;
+        filename = 'results/algebraic_c=1_nystrom';
+        
+    elseif (matrix == 4)
+
+        %Synthetic matrix with algebraically decaying eigenvalues/singular values.
+        %(Figure 8d)
+        n = 5000;
         c = 2;
         D = (1:n).^(-c);
         [Q,~] = qr(randn(n));
@@ -56,19 +69,6 @@ for matrix = 1:9
         tr = trace(A);
         Afun = @(X) A*X;
         filename = 'results/algebraic_c=2_nystrom';
-        
-    elseif (matrix == 4)
-
-        %Synthetic matrix with algebraically decaying eigenvalues/singular values.
-        %(Figure 8d)
-        n = 5000;
-        c = 5;
-        D = (1:n).^(-c);
-        [Q,~] = qr(randn(n));
-        A = Q*diag(D)*Q';
-        tr = trace(A);
-        Afun = @(X) A*X;
-        filename = 'results/algebraic_c=5_nystrom';
 
     elseif (matrix == 5)
 
@@ -125,6 +125,19 @@ for matrix = 1:9
         tr = trace(A);
         Afun = @(x) A*x;
         filename = 'results/exponential_s=100_nystrom';
+        
+    elseif (matrix == 10)
+
+        %Synthetic matrix with algebraically decaying eigenvalues/singular values.
+        %(Figure 8d)
+        n = 5000;
+        c = 3;
+        D = (1:n).^(-c);
+        [Q,~] = qr(randn(n));
+        A = Q*diag(D)*Q';
+        tr = trace(A);
+        Afun = @(X) A*X;
+        filename = 'results/algebraic_c=3_nystrom';
         
     end
 
