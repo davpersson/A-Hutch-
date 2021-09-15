@@ -1,11 +1,9 @@
-clc
-clear
+function plotter_AHutchpp(filename)
 
 addpath('A-Hutch++')
 addpath('other')
 addpath('results')
 
-filename = 'results/test';
 load(filename);
 
 relative_errors_adap_hpp = sort(abs((outputs_adap_hpp-tr)/tr),2);

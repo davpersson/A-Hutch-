@@ -1,11 +1,9 @@
-clc
-clear
+function plotter_Nystrompp(filename)
 
 addpath('Nystrom++')
 addpath('other')
 addpath('results')
 
-filename = 'results/test';
 load(filename);
 
 relative_errors_npp = sort(abs((trace_outputs(:,:,1)-tr)/tr),2);

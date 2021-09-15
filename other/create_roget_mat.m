@@ -2,7 +2,7 @@ function A = create_roget_mat()
 %based on https://www.mathworks.com/matlabcentral/answers/169557-read-a-text-file-with-varying-number-of-colums
 
 %Save rows in a cell
-fid = fopen( 'roget.net' );
+fid = fopen( 'Roget.net' );
 data_cell = textscan( fid, '%s%s%s%s%s%s%s%s%s', 'CollectOutput' ...
     , true, 'Delimiter', ':;' );
 [~] = fclose( fid );
