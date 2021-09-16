@@ -1,6 +1,6 @@
 %------------- DESCRIPTION -------------
 
-%This script reproduces the numerical experiments from Section 3.4.
+%This script reproduces the numerical experiments from Section 3.3.
 
 %---------------------------------------
 
@@ -60,7 +60,7 @@ for matrix = 1:10
     elseif (matrix == 4)
 
         %Synthetic matrix with algebraically decaying eigenvalues/singular values.
-        %(Figure 8d)
+        %(Not included in the paper)
         n = 5000;
         c = 2;
         D = (1:n).^(-c);
