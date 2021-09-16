@@ -16,15 +16,15 @@ filename = 'results/failure_probabilities';
 rng(0)
 
 n = 5000;
-repeats = 100;
+repeats = 100000;
 
 %Initialize tensor ton save results
-table_tensor = zeros(3,3,4);
+table_tensor = zeros(3,3,5);
 
 %Initialize tube index for table_tensor
 tube = 0;
-
-for c = [0.1,0.5,1,2]
+tic
+for c = [0.1,0.5,1,2,3]
     
     tube = tube + 1;
     
@@ -55,7 +55,7 @@ for c = [0.1,0.5,1,2]
             
             for iteration = 1:repeats
 
-                if mod(iteration,1000)==0
+                if mod(iteration,10000)==0
 
                     disp(iteration)
 
@@ -75,5 +75,6 @@ for c = [0.1,0.5,1,2]
     end
     
 end
+toc
 
 save(filename,'table_tensor')

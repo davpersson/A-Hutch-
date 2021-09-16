@@ -59,7 +59,7 @@ for matrix = 1:12
     elseif (matrix == 4)
 
         % Synthetic matrix with algebraically decaying eigenvalues/singular values.
-        % (Figure 3c)
+        % (Not included in the paper)
         n = 5000;
         c = 2;
         D = (1:n).^(-c);

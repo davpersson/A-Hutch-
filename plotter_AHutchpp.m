@@ -40,7 +40,7 @@ h(3)=loglog(matvecs,tolerance_list,'k--*','LineWidth',3);
 
 xlabel('Number of matrix-vector multiplies','interpreter','latex')
 ylabel('Relative error','interpreter','latex')
-legend(h,{'A-Hutch++','Hutch++','Input tolerance'},'interpreter','latex')
+legend(h,{'A-Hutch++','Hutch++','Input tolerance'},'interpreter','latex','Location','best')
 
 set(gca,'FontSize',24)
 hold off
