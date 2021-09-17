@@ -42,7 +42,7 @@ h(1)=semilogy(matvecs,mean_error_npp,'b-*','LineWidth',2);
 h(2)=semilogy(matvecs,mean_error_hpp,'r-*','LineWidth',2);
 h(3)=semilogy(matvecs,mean_error_nahpp,'g-*','LineWidth',2);
 
-xlabel('Number of matrix-vector multiplies','interpreter','latex')
+xlabel('Number of matrix-vector products','interpreter','latex')
 ylabel('Relative error','interpreter','latex')
 legend(h,{'Nystrom++','Hutch++','Single Pass Hutch++'},'interpreter','latex')
 
