@@ -42,7 +42,7 @@ xlabel('Number of matrix-vector products','interpreter','latex')
 ylabel('Relative error','interpreter','latex')
 legend(h,{'A-Hutch++','Hutch++','Input tolerance'},'interpreter','latex','Location','best')
 
-set(gca,'FontSize',24)
+set(gca,'FontSize',20)
 hold off
 
 T = table(mean(total_matvecs_hpp,2),mean(lowrank_matvecs_hpp,2),mean(trest_matvecs_hpp,2),...

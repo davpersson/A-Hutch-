@@ -46,7 +46,7 @@ xlabel('Number of matrix-vector products','interpreter','latex')
 ylabel('Relative error','interpreter','latex')
 legend(h,{'Nystrom++','Hutch++','Single Pass Hutch++'},'interpreter','latex')
 
-set(gca,'FontSize',18)
+set(gca,'FontSize',20)
 hold off
 
 print(filename,'-depsc')
