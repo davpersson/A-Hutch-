@@ -21,7 +21,7 @@ for matrix = 1:10
     if (matrix == 1)
         
         %Synthetic matrix with algebraically decaying eigenvalues/singular values.
-        %(Figure 8a)
+        %(Figure 9a)
         n = 5000;
         c = 0.1;
         D = (1:n).^(-c);
@@ -34,7 +34,7 @@ for matrix = 1:10
     elseif (matrix == 2)
 
         %Synthetic matrix with algebraically decaying eigenvalues/singular values.
-        %(Figure 8b)
+        %(Figure 9b)
         n = 5000;
         c = 0.5;
         D = (1:n).^(-c);
@@ -47,7 +47,7 @@ for matrix = 1:10
     elseif (matrix == 3)
 
         % Synthetic matrix with algebraically decaying eigenvalues/singular values.
-        % (Figure 8c)
+        % (Figure 9c)
         n = 5000;
         c = 1;
         D = (1:n).^(-c);
@@ -72,7 +72,7 @@ for matrix = 1:10
 
     elseif (matrix == 5)
 
-        %Estrada index (Figure 9)
+        %Estrada index (Figure 10)
         B = sparse(create_roget_mat()); 
         n_it = 35;
         n = size(B,1);
@@ -84,7 +84,7 @@ for matrix = 1:10
         
     elseif (matrix == 6)
 
-        %Inverse of tridiag(-1,4,-1) (Figure 10a)
+        %Inverse of tridiag(-1,4,-1) (Figure 11a)
         A = sparse(4*eye(10000) - diag(ones(9999,1),1) - diag(ones(9999,1),-1));
         tr = trace(inv(A));
         n = size(A,1);
@@ -93,7 +93,7 @@ for matrix = 1:10
         
     elseif (matrix == 7)
 
-        %Inverse of discretization of Poisson's equation (Figure 10b)
+        %Inverse of discretization of Poisson's equation (Figure 11b)
         A = gallery('poisson',100);
         tr = trace(inv(A));
         n = size(A,1);
@@ -103,7 +103,7 @@ for matrix = 1:10
     elseif (matrix == 8)
         
         %Synthetic matrix with exponentially decaying eigenvalues/singular values.
-        %(Figure 11a)
+        %(Figure 12a)
         n = 1000;
         s = 10;
         D = diag(exp(-(1:n)/s));
@@ -116,7 +116,7 @@ for matrix = 1:10
     elseif (matrix == 9)
         
         %Synthetic matrix with exponentially decaying eigenvalues/singular values.
-        %(Figure 11b)
+        %(Figure 12b)
         n = 1000;
         s = 100;
         D = diag(exp(-(1:n)/s));
@@ -129,7 +129,7 @@ for matrix = 1:10
     elseif (matrix == 10)
 
         %Synthetic matrix with algebraically decaying eigenvalues/singular values.
-        %(Figure 8d)
+        %(Figure 9d)
         n = 5000;
         c = 3;
         D = (1:n).^(-c);
