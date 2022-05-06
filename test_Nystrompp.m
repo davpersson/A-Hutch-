@@ -11,7 +11,6 @@ addpath('Nystrom++')
 addpath('other')
 addpath('results')
 
-filename = 'results/test';
 rng(0)
 
 for matrix = 1:10
@@ -104,7 +103,7 @@ for matrix = 1:10
         
         %Synthetic matrix with exponentially decaying eigenvalues/singular values.
         %(Figure 12a)
-        n = 1000;
+        n = 5000;
         s = 10;
         D = diag(exp(-(1:n)/s));
         [Q,~] = qr(randn(n));
@@ -117,7 +116,7 @@ for matrix = 1:10
         
         %Synthetic matrix with exponentially decaying eigenvalues/singular values.
         %(Figure 12b)
-        n = 1000;
+        n = 5000;
         s = 100;
         D = diag(exp(-(1:n)/s));
         [Q,~] = qr(randn(n));
