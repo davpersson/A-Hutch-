@@ -13,4 +13,9 @@ This contains the implementation of the algorithm proposed in [1] and scripts to
 
 ---------------------------------------------------------------------
 ### Reference
-[1] D. Persson, A. Cortinovis, and D. Kressner. "Improved variants of the Hutch++ algorithm for trace estimation", 2021.
+[1] D. Persson, A. Cortinovis, and D. Kressner. "Improved variants of the Hutch++ algorithm for trace estimation", SIAM J. Matrix Anal. Appl., 43 (2022), pp. 1162--118.
+
+### Citation
+If you use this repository, please cite it as:
+
+[![DOI](https://zenodo.org/badge/406348912.svg)](https://doi.org/10.5281/zenodo.15149276)
